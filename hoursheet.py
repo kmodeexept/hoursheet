@@ -26,10 +26,10 @@ def get_rand_day(date):
     return date.isoformat() + " " + to_time(start) + " " + to_time(end) + " " + to_time(diff) , diff
 
 def print_sum(sum_hours):
-    return "Summe: " + to_time(sum_hours)
+    return "Total: " + to_time(sum_hours)
 
 def get_stundenzettel(startdate,weeks):
-    str_out = "Datum Arbeitsbegin Arbeitsende Arbeitszeit\n"
+    str_out = "Date Start End Total\n"
     sum_hours = 0
     month = -1
     for i in range(weeks):
@@ -45,8 +45,8 @@ def get_stundenzettel(startdate,weeks):
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: python3 Studenzettel.py <date> <weeks>")
-        print("   Example: python3 Studenzettel.py 2021-12-01 12")
+        print("Usage: python3 hoursheet.py <date> <weeks>")
+        print("   Example: python3 hoursheet.py 2021-12-01 12")
     else:
         print(get_stundenzettel(date.fromisoformat(sys.argv[1]),int(sys.argv[2])))
 
